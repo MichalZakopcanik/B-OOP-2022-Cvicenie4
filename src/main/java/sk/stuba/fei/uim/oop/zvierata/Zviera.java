@@ -10,4 +10,8 @@ public abstract class Zviera implements Behanie {
         this.zvukZvierata();
     }
 
+    @Override
+    public String toString() {
+        return this.meno;
+    }
 }
