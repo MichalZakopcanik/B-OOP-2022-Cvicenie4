@@ -3,7 +3,7 @@ package sk.stuba.fei.uim.oop.zvierata;
 public class Macka extends Zviera implements Behanie {
 
     public Macka(String meno) {
-        this.meno = meno;
+        super(meno);
     }
 
     @Override
