@@ -6,7 +6,9 @@ import sk.stuba.fei.uim.oop.zvierata.Zviera;
 
 import javax.crypto.Mac;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,30 +17,15 @@ public class Main {
         list.add(new Pes("luna"));
         System.out.println(list.size());
 
-        ArrayList<Macka> listMaciek = new ArrayList<>();
-        listMaciek.add(new Macka("murko"));
-        listMaciek.add(new Macka("garfield"));
-        System.out.println(listMaciek.size());
-
-        ArrayList<Zviera> listZveri = new ArrayList<>();
-        listZveri.addAll(list);
-        listZveri.addAll(listMaciek);
-        System.out.println(listZveri.size());
-
-        Collections.shuffle(listZveri);
-
-        for (var i = 0; i < listZveri.size(); i++){
-            listZveri.get(i).pohladkat();
+        Pes[] pole = new Pes[2];
+        list.toArray(pole);
+        for (Zviera zver : pole){
+            zver.zvukZvierata();
         }
 
-        for (Zviera zver : listZveri){
-            zver.pohladkat();
-        }
-
-        var iterator = listZveri.iterator();
-        while (iterator.hasNext()){
-            var prvok = iterator.next();
-            prvok.zvukZvierata();
-        }
+        List<Pes> psi = Arrays.asList(pole);
+        ArrayList<Pes> list2 = new ArrayList<>(psi);
+        list2.add(new Pes("dunco 2"));
+        System.out.println(list2.size());
     }
 }
